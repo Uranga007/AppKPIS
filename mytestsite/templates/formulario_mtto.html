@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <title>Registro de actividades de mantenimiento </title>
+</head>
+<body bgcolor="#f44d00">
+<center><h1>Seguimiento KPI's 
+<br>Proyecto de Modernización de la Línea 1 STC Metro</br></h1>
+<br></br>
+<h1>Registro de actividades de mantenimiento</h1>
+<label for="Hora"> Fecha (formato mm/dd/aaaa)</label>{{ form.fecha }}
+<form method="POST">
+{% block content %}
+{% csrf_token %}
+<input type="date", id="Fecha" name="Fecha" value="2022-01-01" min="2022-01-01", max="2022-12-31" requiered="Fecha"><br></br>
+<label for="Real_en">Realizada en:</label><br></br> {{ form.Real_en }}
+<select name="Real_en">
+ 	<option value="Vias">Vias</option>
+ 	<option value="Trenes">Trenes</option>
+</select>
+<br></br>
+
+<label for="Tren">Tipo de actividad:</label><br></br> {{ form.tipo_tren }}
+<select name="Trenes">
+ 	<option value="Preventiva">Preventiva</option>
+ 	<option value="Correctiva">Correctiva</option>
+</select>
+<br></br>
+
+<label for="Peso">Peso de la actividad</label><br></br> {{ form.Peso }}
+<select name="Peso">
+    <option value="NA">N/A</option>
+ 	<option value="1">Tipo 1</option>
+ 	<option value="1.3">Tipo 2</option>
+ 	<option value="1.7">Tipo 3</option>
+ 	<option value="2">Tipo 4</option>
+ 	<option value="2.3">Tipo 5</option>
+ 	
+</select>
+<br></br>
+
+<label for="claveActividad"> Clave de la actividad </label><br></br>
+<input type="text", id="claveActividad" name="claveActividad"  requiered="claveActividad">
+<br></br>
+<label for="Oficio_Asociado"> Oficio asociado</label>{{ form.oficioAsociado }}<br></br>
+<input type="text", id="Oficio_Asociado" name="Oficio_Asociado"  requiered="Oficio_Asociado"><br></br>
+<input type="submit" id="GuardarRegistros" value="Guardar Registros" style=width:220px height:150px requiered="GuardarRegistros"> 
+</form>{% endblock %} 
+</center>
+</body>
+</html>

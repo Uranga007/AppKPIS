@@ -1,0 +1,45 @@
+<html>
+<body bgcolor="#f44d00">
+<center><h1>Seguimiento KPIs 
+<br>Proyecto de Modernizacion de la Linea 1 STC Metro</br></h1>
+<form method="POST">
+{% csrf_token %}
+{% block content %}
+
+<br><h1>1. Etapa de Implementacion</h1></br>
+<br><b><i>Introducir datos faltantes</i></b></br><br>
+<br><b>1.1. VIAS</b></br>
+<br>
+<label>1.1.1. Disponibilidad</label><br></br>
+<label for="TDP">Tiempo Disponible Programado (en horas): </label>{{ form.TiemDisProm_vi }}<input type="number" id="TDP" name="TDP" required><br></br>
+<label>1.1.2. Fiabilidad</label><br></br>
+<label for="TDE">Tiempo Disponible Efectivo (en horas): </label>{{ form.TDE }}<input type="number" id="TDE" name="TDE" required><br></br>
+<label for="MTBF">MTBF exigible (horas de servicio): </label>{{ form.MTBF_vi }}<input type="number" id="MTBF" name="MTBF" required><br></br>
+<label>1.1.3. Cumplimiento al programa de mantenimiento</label><br></br>
+<label for="MttoVI">Actividades de Mantenimiento Programadas: </label>{{ form.mtto_vi }}<input type="number" id="MttoVI" name="MttoVI" required><br></br>
+<br></br>
+<br> <b> 1.2. TRENES </b> </br>
+<br>
+<label>1.2.1. Disponibilidad</label><br></br>
+pendiente<br></br>
+<label>1.2.2. Fiabilidad</label><br></br>
+<label for="km_trLTN">Kilometraje LTN: </label>{{ form.km_trLTN }}<input type="number" id="km_trLTN" name="km_trLTN" required><br></br>
+<label for="km_trLTNM16">Kilometraje LTNM16: </label>{{ form.km_trLTNM16 }}<input type="number" id="km_trLTNM16" name="km_trLTNM16" required><br></br>
+<label>1.2.3. Cumplimiento al programa de mantenimiento</label><br></br>
+<label for="mtto_tr">Actividades de Mantenimiento Programadas: </label>
+<br></br>
+<label for="Tipo_1">Tipo 1: </label>{{ form.Tipo_1 }}<input type="number" id="Tipo_1" name="Tipo_1" required><br></br>
+<label for="Tipo_2">Tipo 2: </label>{{ form.Tipo_2 }}<input type="number" id="Tipo_2" name="Tipo_2" required><br></br>
+<label for="Tipo_3">Tipo 3: </label>{{ form.Tipo_3 }}<input type="number" id="Tipo_3" name="Tipo_3" required><br></br>
+<label for="Tipo_4">Tipo 4: </label>{{ form.Tipo_4 }}<input type="number" id="Tipo_4" name="Tipo_4" required><br></br>
+<label for="Tipo_5">Tipo 5: </label>{{ form.Tipo_5 }}<input type="number" id="Tipo_5" name="Tipo_5" required><br></br>
+<br></br>
+
+<label for="Incidencias_NoAtendidas"> Incidencias (no atendidas):</label>{{ form.Incidencias_NoAtendidas }}<input type="number" id="Incidencias_NoAtendidas" name="Incidencias_NoAtendidas" requiered><br></br>
+<br></br>
+<input type="submit" value="Generar Informes" style=width:320px height:250px></form>{% endblock %} 
+
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <title>Registro de incidencias -Sistemas de Control-</title>
+</head>
+<body bgcolor="#f44d00">
+<center><h1>Seguimiento KPI's 
+<br>Proyecto de Modernización de la Línea 1 STC Metro</br></h1>
+<br></br>
+<h1>Registro de incidentes</h1>
+<h1>SISTEMAS DE CONTROL</h1>
+
+<form method="POST">
+{% block content %}
+{% csrf_token %}
+<label for="Fecha"> Fecha (formato mm/dd/aaaa)</label>{{ form.fecha }}<br></br>
+<input type="date", id="Fecha" name="Fecha" value="2022-01-01" min="2022-01-01", max="2022-12-31" requiered><br></br>
+<label for="Hora"> Hora (formato 24hrs)</label>{{ form.hora }}<br></br>
+<input type="number", id="Hora" name="Hora" requiered><br></br>
+<label for="Interr_Min_SC"> Interrupción (en minutos)</label>{{ form.interrupcion }}<br></br>
+<input type="number", id="Interr_Min_SC" name="Interr_Min_SC" requiered><br></br>
+<label for="Oficio_Asociado"> Oficio asociado</label>{{ form.oficioAsociado }}<br></br>
+<input type="text", id="Oficio_Asociado" name="Oficio_Asociado" requiered><br></br>
+<label for="TipASC">Tipo de avería</label><br></br> {{ form.TipA }}
+<select name="TipASC">
+ 	<option value="1.5">Interrupción del servicio</option>
+ 	<option value="0.5">Afectación del servicio</option>
+ 	<option value="0.25">Confort</option>
+ 	<option value="0.25">Afectación del servicio normal</option>
+</select>
+<br></br>
+<br></br>
+<input type="submit" value="Guardar Registros" style=width:220px height:150px>
+</form>
+{% endblock %}
+</center>
+</body>
+</html>

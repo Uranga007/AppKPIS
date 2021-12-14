@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <title>Registro de incidentes -TRENES- </title>
+</head>
+<body bgcolor="#f44d00">
+<center><h1>Seguimiento KPI's 
+<br>Proyecto de Modernización de la Línea 1 STC Metro</br></h1>
+<br></br>
+<h1>Registro de incidentes</h1>
+<h1>TRENES</h1>
+<label for="Hora"> Fecha (formato mm/dd/aaaa)</label>{{ form.fecha }}
+<form method="POST">
+{% csrf_token %}
+{% block content %}
+
+<input type="date", id="Fecha" name="Fecha" value="2022-01-01" min="2022-01-01", max="2022-12-31" requiered><br></br>
+<label for="Hora"> Hora (formato 24hrs)</label> {{ form.hora }}<br></br>
+<input type="number", id="Hora" name="Hora" requiered><br></br>
+<label for="Tren">Tipo de tren</label> {{ form.tipo_tren }}<br></br>
+<select name="Trenes">
+ 	<option value="Nuevo">Nuevo</option>
+ 	<option value="NM16">NM16</option>
+</select>
+<br></br>
+<label for="Interr_Min_T"> Interrupción (en minutos)</label>{{form.interrupcion}}<br></br>
+<input type="number", id="Interr_Min_T" name="Interr_Min_T" requiered>
+<br></br>
+<label for="Oficio_Asociado"> Oficio asociado</label>{{ form.oficioAsociado }}<br></br>
+<input type="text", id="Oficio_Asociado" name="Oficio_Asociado" requiered><br></br>
+<input type="submit" value="Guardar Registros" style=width:220px height:150px></form>{% endblock %} 
+</center>
+</body>
+</html>
